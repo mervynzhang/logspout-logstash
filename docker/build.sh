@@ -1,5 +1,3 @@
-
-
 #!/bin/sh
 set -e
 apk add --update go git mercurial build-base
