@@ -1,0 +1,13 @@
+language: go
+go:
+  - '1.6.3'
+
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - cd docker
+  - docker build -t mervynzhang/temp2:$CI_BUILD_ID .
+  - docker push mervynzhang/temp2
