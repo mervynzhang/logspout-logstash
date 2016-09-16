@@ -8,6 +8,5 @@ services:
 
 before_install:
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - cd docker
   - docker build -t mervynzhang/temp2:$TRAVIS_JOB_ID .
   - docker push mervynzhang/temp2
